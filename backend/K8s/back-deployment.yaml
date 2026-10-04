@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-back-deployment
+  labels:
+    app: opsdesk-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: opsdesk-backend
+  template:
+    metadata:
+      labels:
+        app: opsdesk-backend
+    spec:
+      containers:
+      - name: opsdesk-backend
+        image: avi03/backend:latest
+        ports:
+        - containerPort: 8000
+      env:
+      - name: "port of backend"
+        valueFrom:
+          configMapKeyRef:
+            name: my-configmap
+            key: PORT
+      - name: "Databasename"
+        valueFrom:
+          configMapKeyRef:
+            name: my-configmap
+            key: DB_NAME
+      - name: "JWT secret"
+        valueFrom:
+          secretKeyRef:
+            name: my-secret
+            key: JWT_SECRET
+      - name: "mongoDB url to connect mongodb atlas"
+        valueFrom:
+          secretKeyRef:
+            name: my-secret
+            key: MONGODB      
