@@ -1,0 +1,9 @@
+| Feature               | Admin | Technician | Employee |
+| --------------------- | ----- | ---------- | -------- |
+| View All Tickets      | ✅     | ❌          | ❌        |
+| View Assigned Tickets | ✅     | ✅          | ❌        |
+| View Own Tickets      | ✅     | ✅          | ✅        |
+| Create Ticket         | ✅     | ❌          | ✅        |
+| Update Status         | ✅     | ✅          | ❌        |
+| Delete Ticket         | ✅     | ❌          | ❌        |
+| Manage Users          | ✅     | ❌          | ❌        |
