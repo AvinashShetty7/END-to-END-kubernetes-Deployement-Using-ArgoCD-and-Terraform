@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: my-configmap
 data:
-  DB_NAME: IssueTicket
-  PORT: 8000
+  DB_NAME: "IssueTicket"
+  PORT: "8000"

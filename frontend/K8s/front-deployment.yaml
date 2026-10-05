@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: opsdesk-frontend
-        image: avi03/frontend:latest
+        image: avi03/051026frontend:v1
         ports:
         - containerPort: 8080

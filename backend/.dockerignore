@@ -2,3 +2,5 @@
 node_modules
 .gitignore
 dockerfile
+Helm
+K8s

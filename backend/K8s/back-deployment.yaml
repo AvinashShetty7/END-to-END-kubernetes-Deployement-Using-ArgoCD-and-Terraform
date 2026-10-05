@@ -16,27 +16,27 @@ spec:
     spec:
       containers:
       - name: opsdesk-backend
-        image: avi03/backend:latest
+        image: avi03/051026backend:v1
         ports:
         - containerPort: 8000
-      env:
-      - name: "port of backend"
-        valueFrom:
-          configMapKeyRef:
-            name: my-configmap
-            key: PORT
-      - name: "Databasename"
-        valueFrom:
-          configMapKeyRef:
-            name: my-configmap
-            key: DB_NAME
-      - name: "JWT secret"
-        valueFrom:
-          secretKeyRef:
-            name: my-secret
-            key: JWT_SECRET
-      - name: "mongoDB url to connect mongodb atlas"
-        valueFrom:
-          secretKeyRef:
-            name: my-secret
-            key: MONGODB      
+        env:
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: PORT
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: DB_NAME
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: JWT_SECRET
+        - name: MONGODB
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: MONGODB
