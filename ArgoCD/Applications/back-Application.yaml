@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: front-app
+  namespace: argocd
+spec:
+  project: OpsDesk
+  source:
+    repoURL: https://github.com/AvinashShetty7/END-to-END-kubernetes-Deployement-Using-ArgoCD-and-Terraform
+    targetRevision: main
+    path: frontend/Helm/frontchart
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
