@@ -4,7 +4,7 @@ metadata:
   name: front-app
   namespace: argocd
 spec:
-  project: OpsDesk
+  project: opsdesk
   source:
     repoURL: https://github.com/AvinashShetty7/END-to-END-kubernetes-Deployement-Using-ArgoCD-and-Terraform
     targetRevision: main

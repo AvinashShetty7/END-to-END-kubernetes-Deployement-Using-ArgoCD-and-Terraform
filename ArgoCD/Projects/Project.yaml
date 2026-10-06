@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: OpsDesk
+  name: opsdesk
   namespace: argocd
 spec:
   description: OpsDesk ticket management Sample Application
