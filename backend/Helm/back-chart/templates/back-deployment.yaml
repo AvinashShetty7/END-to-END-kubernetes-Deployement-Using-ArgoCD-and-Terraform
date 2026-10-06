@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-back-deployment
+  labels:
+    app: opsdesk-backend
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: opsdesk-backend
+  template:
+    metadata:
+      labels:
+        app: opsdesk-backend
+    spec:
+      containers:
+      - name: opsdesk-backend
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 8000
+        env:
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: PORT
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: DB_NAME
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: JWT_SECRET
+        - name: MONGODB
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: MONGODB

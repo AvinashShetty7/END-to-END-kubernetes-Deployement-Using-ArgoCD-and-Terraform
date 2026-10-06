@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-front-deployment
+  labels:
+    app: opsdesk-frontend
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: opsdesk-frontend
+  template:
+    metadata:
+      labels:
+        app: opsdesk-frontend
+    spec:
+      containers:
+      - name: opsdesk-frontend
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 8080

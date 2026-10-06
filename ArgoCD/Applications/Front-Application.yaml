@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/AvinashShetty7/END-to-END-kubernetes-Deployement-Using-ArgoCD-and-Terraform
     targetRevision: main
-    path: backend/Helm/backchart
+    path: backend/Helm/back-chart
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
