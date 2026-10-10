@@ -23,4 +23,12 @@ module "eks" {
     Environment = "dev"
     Terraform   = "true"
   }
+  depends_on = [module.vpc]
 }
+
+
+data "aws_eks_cluster_auth" "name" {
+  name = module.eks.cluster_name
+}
+
+
