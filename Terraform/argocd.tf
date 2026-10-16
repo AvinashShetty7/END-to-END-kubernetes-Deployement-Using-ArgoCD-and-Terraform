@@ -16,14 +16,14 @@ resource "helm_release" "argocd" {
           type = "ClusterIP"
         }
         ingress = {
-          enabled = false  # We'll use port-forward for access
+          enabled = false # We'll use port-forward for access
         }
         # Enable insecure mode for easier local access
         extraArgs = [
           "--insecure"
         ]
       }
-      
+
       # Controller configuration
       controller = {
         resources = {
@@ -37,7 +37,7 @@ resource "helm_release" "argocd" {
           }
         }
       }
-      
+
       # Repo server configuration
       repoServer = {
         resources = {
@@ -51,7 +51,7 @@ resource "helm_release" "argocd" {
           }
         }
       }
-      
+
       # Redis configuration
       redis = {
         resources = {
