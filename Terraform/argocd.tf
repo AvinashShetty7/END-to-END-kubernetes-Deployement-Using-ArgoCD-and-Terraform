@@ -71,13 +71,13 @@ resource "helm_release" "argocd" {
 }
 
 resource "kubectl_manifest" "argocd_projects" {
-  for_each   = fileset("${path.module}/../argocd/projects", "*.yaml")
-  yaml_body  = file("${path.module}/../argocd/projects/${each.value}")
+  for_each   = fileset("${path.module}/../ArgoCD/Projects", "*.yaml")
+  yaml_body  = file("${path.module}/../ArgoCD/Projects/${each.value}")
   depends_on = [helm_release.argocd]
 }
 
 resource "kubectl_manifest" "argocd_apps" {
-  for_each   = fileset("${path.module}/../argocd/applications", "*.yaml")
-  yaml_body  = file("${path.module}/../argocd/applications/${each.value}")
+  for_each   = fileset("${path.module}/../ArgoCD/Applications", "*.yaml")
+  yaml_body  = file("${path.module}/../ArgoCD/Applications/${each.value}")
   depends_on = [kubectl_manifest.argocd_projects]
 }

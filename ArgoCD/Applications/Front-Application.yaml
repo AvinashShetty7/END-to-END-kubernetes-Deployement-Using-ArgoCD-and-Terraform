@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: back-app
+  name: front-app
   namespace: argocd
 spec:
   project: opsdesk
   source:
     repoURL: https://github.com/AvinashShetty7/END-to-END-kubernetes-Deployement-Using-ArgoCD-and-Terraform
     targetRevision: main
-    path: backend/Helm/back-chart
+    path: frontend/Helm/front-chart
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
