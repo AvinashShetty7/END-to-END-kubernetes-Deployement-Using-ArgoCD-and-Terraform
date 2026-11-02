@@ -7,20 +7,15 @@ on:
     paths:
       - "Terraform/**"
       - "ArgoCD/**"
-      - "backend/Helm/**"
-      - "frontend/Helm/**"
       - ".github/workflows/terraform.yaml"
 
   push:
     branches:
       - main
     paths:
-      - "docker-compose.yml"
-      # - "Terraform/**"
-      # - "ArgoCD/**"
-      # - "backend/Helm/**"
-      # - "frontend/Helm/**"
-      # - ".github/workflows/terraform.yaml"
+      - "Terraform/**"
+      - "ArgoCD/**"
+      - ".github/workflows/terraform.yaml"
 
   workflow_dispatch:
 
