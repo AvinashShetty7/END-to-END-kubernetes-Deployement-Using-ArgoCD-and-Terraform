@@ -9,5 +9,5 @@ replicaCount: 2
 image:
   repository: avi03/frontendservice
   # This sets the pull policy for images.
-  tag: eb53324
+  tag: 1f7548f
 
