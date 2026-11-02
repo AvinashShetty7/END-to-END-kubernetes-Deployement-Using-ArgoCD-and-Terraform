@@ -15,11 +15,12 @@ on:
     branches:
       - main
     paths:
-      - "Terraform/**"
-      - "ArgoCD/**"
-      - "backend/Helm/**"
-      - "frontend/Helm/**"
-      - ".github/workflows/terraform.yaml"
+      - "docker-compose.yml"
+      # - "Terraform/**"
+      # - "ArgoCD/**"
+      # - "backend/Helm/**"
+      # - "frontend/Helm/**"
+      # - ".github/workflows/terraform.yaml"
 
   workflow_dispatch:
 
