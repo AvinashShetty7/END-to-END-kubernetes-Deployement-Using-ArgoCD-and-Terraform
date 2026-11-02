@@ -15,6 +15,10 @@ env:
   FRONTEND_IMAGE: avi03/frontendservice
   BACKEND_IMAGE: avi03/backendservice
 
+permissions:
+  contents: write
+
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
