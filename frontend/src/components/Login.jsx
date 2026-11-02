@@ -117,7 +117,7 @@ export default function Login() {
               <span className="text-3xl sm:text-4xl">🔐</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-blue-700 to-slate-700 bg-clip-text text-transparent mb-2">
-              Welcome Back zeno_company
+              Welcome Back users
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">Sign in to your account to continue</p>
           </div>
