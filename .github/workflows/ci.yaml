@@ -56,6 +56,8 @@ jobs:
 
       - name: Commit Helm Update
         run: |
+          git config --global user.email "avinashshetty2004@gmail.com"
+          git config --global user.name "Avi"
           git add frontend/Helm/front-chart/values.yaml
           git add backend/Helm/back-chart/values.yaml
           git commit -m "Update image tag to ${TAG}"
