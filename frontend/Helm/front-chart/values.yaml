@@ -9,5 +9,5 @@ replicaCount: 2
 image:
   repository: avi03/051026frontend
   # This sets the pull policy for images.
-  tag: "v1"
+  tag: 6e6451a
 
